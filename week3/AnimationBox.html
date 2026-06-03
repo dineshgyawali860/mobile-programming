@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("div").animate({ left: "500px" }, 1000, function(){
+                    $(this).css("background-color", "red");
+                    $(this).animate({ top: "500px" }, 1000, function(){
+                        $(this).css("background-color", "orange");
+                        $(this).animate({ left: "0px" }, 1000, function(){
+                            $(this).css("background-color", "purple");
+                            $(this).animate({ top: "0px" }, 1000, function(){
+                                $(this).css("background-color", "pink");
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <button type="button">Animate</button>
+    <div style="width: 200px; height: 200px; background-color: lightblue; border: 2px solid black; display: flex; justify-content: center; align-items: center; position: relative;">
+        Box
+    </div>
+    
+    
+</body>
+</html>

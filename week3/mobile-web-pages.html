@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Week 3 jQuery Assignment</title>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#f4f4f4;
+    padding:20px;
+}
+
+/* PROFILE CARD */
+#profile-card{
+    width:350px;
+    background:white;
+    padding:20px;
+    border:2px solid #ccc;
+}
+
+/* IMAGE */
+#profile-photo{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+}
+
+/* BUTTONS */
+button{
+    margin:5px;
+    padding:8px;
+    cursor:pointer;
+}
+
+/* FINAL OUTPUT BOX */
+#output{
+    width:350px;
+    margin:20px 0;        /* CENTER */
+    padding:15px;
+    background:white;
+    border:2px solid #333;
+    min-height:60px;
+    font-size:18px;
+    font-weight:bold;
+    color:#2c3e50;
+    text-align:center;
+}
+
+/* EFFECTS */
+.highlighted{
+    background:yellow;
+    border:3px solid gold;
+}
+
+.dark-mode{
+    background:#2c3e50 !important;
+    color:white;
+}
+
+.rounded{
+    border-radius:50%;
+}
+
+.shadow{
+    box-shadow:0 0 15px black;
+}
+
+</style>
+</head>
+
+<body>
+
+<h2>Week 3 jQuery Assignment</h2>
+
+<!-- PROFILE CARD -->
+<div id="profile-card">
+
+    <h3 id="student-name">@dineshgyawali</h3>
+
+    <img id="profile-photo" src="WhatsApp Image 2026-01-12 at 11.46.48 AM.jpeg" alt="photo">
+
+    <p id="student-bio">
+        <b>Bio:</b> I am learning jQuery and web development.
+    </p>
+
+    <input type="text" id="nickname-input" placeholder="Enter nickname">
+
+    <ul id="skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+</div>
+
+<!--  OUTPUT BOX  -->
+<div id="output">OUTPUT WILL APPEAR HERE...</div>
+
+<!-- BUTTONS -->
+<button id="show-name">Show Name</button>
+<button id="change-name">Change Name</button>
+<button id="show-bio">Show Bio</button>
+<button id="get-input">Get Input</button>
+<button id="set-input">Set Input</button>
+
+<br><br>
+
+<button id="highlight-card">Highlight Card</button>
+<button id="remove-highlight">Remove Highlight</button>
+<button id="toggle-dark">Toggle Dark Mode</button>
+<button id="toggle-rounded">Toggle Rounded</button>
+
+<br><br>
+
+<button id="red-bg">Red Background</button>
+<button id="reset-bg">Reset Background</button>
+
+<br><br>
+
+<button id="hide-photo">Hide Photo</button>
+<button id="show-photo">Show Photo</button>
+<button id="toggle-bio">Toggle Bio</button>
+
+<br><br>
+
+<button id="fade-out">Fade Out Card</button>
+<button id="fade-in">Fade In Card</button>
+<button id="fade-half">Fade 50%</button>
+
+<br><br>
+
+<button id="slide-up">Slide Up</button>
+<button id="slide-down">Slide Down</button>
+<button id="slide-toggle">Slide Toggle</button>
+
+<br><br>
+
+<button id="animate-card">Animate Card</button>
+
+<script>
+$(document).ready(function(){
+
+    // GET & SET METHODS
+    $("#show-name").click(function(){
+        $("#output").text($("#student-name").text());
+    });
+
+    $("#change-name").click(function(){
+        $("#student-name").text("Dinesh Gyawali");
+        $("#output").text("Name Changed Successfully!");
+    });
+
+    $("#show-bio").click(function(){
+        $("#output").text($("#student-bio").text());
+    });
+
+    $("#get-input").click(function(){
+        $("#output").text($("#nickname-input").val());
+    });
+
+    $("#set-input").click(function(){
+        $("#nickname-input").val("jQuery Pro");
+        $("#output").text("Input Set Successfully!");
+    });
+
+    // CSS CLASS MANIPULATION
+    $("#highlight-card").click(function(){
+        $("#profile-card").addClass("highlighted");
+    });
+
+    $("#remove-highlight").click(function(){
+        $("#profile-card").removeClass("highlighted");
+    });
+
+    $("#toggle-dark").click(function(){
+        $("#profile-card").toggleClass("dark-mode");
+    });
+
+    $("#toggle-rounded").click(function(){
+        $("#profile-photo").toggleClass("rounded");
+    });
+
+    // CSS METHOD
+    $("#red-bg").click(function(){
+        $("#profile-card").css("background","#e74c3c");
+    });
+
+    $("#reset-bg").click(function(){
+        $("#profile-card").css("background","white");
+    });
+
+    // HIDE SHOW EFFECTS
+    $("#hide-photo").click(function(){
+        $("#profile-photo").hide("slow");
+    });
+
+    $("#show-photo").click(function(){
+        $("#profile-photo").show("slow");
+    });
+
+    $("#toggle-bio").click(function(){
+        $("#student-bio").toggle();
+    });
+
+    // FADE EFFECTS
+    $("#fade-out").click(function(){
+        $("#profile-card").fadeOut();
+    });
+
+    $("#fade-in").click(function(){
+        $("#profile-card").fadeIn();
+    });
+
+    $("#fade-half").click(function(){
+        $("#profile-card").fadeTo("slow",0.5);
+    });
+
+    // SLIDE EFFECTS
+    $("#slide-up").click(function(){
+        $("#skills-list").slideUp();
+    });
+
+    $("#slide-down").click(function(){
+        $("#skills-list").slideDown();
+    });
+
+    $("#slide-toggle").click(function(){
+        $("#skills-list").slideToggle();
+    });
+
+    // ANIMATE METHOD
+    $("#animate-card").click(function(){
+        $("#profile-card")
+            .animate({marginLeft:"200px"},1000)
+            .animate({marginLeft:"0px"},1000);
+    });
+
+    // EVENT HANDLING
+    $("#profile-photo").mouseenter(function(){
+        $(this).addClass("shadow");
+    });
+
+    $("#profile-photo").mouseleave(function(){
+        $(this).removeClass("shadow");
+    });
+
+    $("#nickname-input").keypress(function(event){
+        $("#output").text("Pressed Key: " + event.key);
+    });
+
+});
+</script>
+
+</body>
+</html>
