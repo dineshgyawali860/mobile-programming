@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile Card</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Card using ID selector */
+    #profile-card {
+      width: 300px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    #profile-card:hover {
+      transform: scale(1.05);
+    }
+
+    /* Round profile image */
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #007bff;
+      margin-bottom: 15px;
+    }
+
+    /* Name */
+    .student-name {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    /* Course */
+    .course {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    /* Button using ID selector */
+    #view-btn {
+      background-color: blue;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #view-btn:hover {
+      background-color: darkblue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="profile-card">
+
+    <!-- Profile Image -->
+    <div>
+      <img class="profile-img"
+           src="WhatsApp Image 2026-01-12 at 11.46.47 AM.jpeg"
+           alt="Student Profile">
+    </div>
+
+    <!-- Name -->
+    <div class="student-name">
+      Dinesh Gyawali
+    </div>
+
+    <!-- Course -->
+    <div class="course">
+      BScIT Student
+    </div>
+
+    <!-- Button -->
+    <button id="view-btn">
+      View Profile
+    </button>
+
+  </div>
+
+</body>
+</html>
