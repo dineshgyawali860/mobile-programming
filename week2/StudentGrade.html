@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container{
+            background: white;
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        button{
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        h2{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Student Grade Calculator</h1>
+
+        <input type="number" id="sub1" placeholder="Subject 1 Marks">
+        <input type="number" id="sub2" placeholder="Subject 2 Marks">
+        <input type="number" id="sub3" placeholder="Subject 3 Marks">
+        <input type="number" id="sub4" placeholder="Subject 4 Marks">
+        <input type="number" id="sub5" placeholder="Subject 5 Marks">
+        <input type="number" id="sub6" placeholder="Subject 6 Marks">
+        <input type="number" id="sub7" placeholder="Subject 7 Marks">
+        <input type="number" id="sub8" placeholder="Subject 8 Marks">
+        <input type="number" id="sub9" placeholder="Subject 9 Marks">
+
+        <button onclick="calculateGrade()">Calculate</button>
+
+        <h2 id="totalMarks"></h2>
+        <h2 id="result"></h2>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
